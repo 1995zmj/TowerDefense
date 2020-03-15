@@ -32,3 +32,8 @@ sysinfo.txt
 
 # VS Code files
 .vscode/
+
+# Rider files
+.idea/
+Assets/Plugins/Editor/JetBrains.meta
+Assets/Plugins/Editor/JetBrains
