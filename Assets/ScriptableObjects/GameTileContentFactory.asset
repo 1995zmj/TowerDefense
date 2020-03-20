@@ -18,3 +18,5 @@ MonoBehaviour:
     type: 3}
   wallPrefab: {fileID: 79372895639106568, guid: c7efe8f1d057b0149bdaa37582256039,
     type: 3}
+  spawnPointPrefab: {fileID: 2736851357054797371, guid: 453a6a8234ba2da478734c128816528e,
+    type: 3}
