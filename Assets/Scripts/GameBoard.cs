@@ -27,6 +27,7 @@ public class GameBoard : MonoBehaviour {
         return spawnPoints[index];
     }
     
+    
     bool showGrid, showPaths;
 
     public bool ShowGrid {
