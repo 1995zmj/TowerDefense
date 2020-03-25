@@ -5,6 +5,7 @@ public class GameTile : MonoBehaviour {
     [SerializeField]
     Transform arrow = null;
 
+    [SerializeField] private Transform point = null;
     GameTile north, east, south, west, nextOnPath;
     
     static Quaternion
@@ -91,7 +92,10 @@ public class GameTile : MonoBehaviour {
 		    arrow.gameObject.SetActive(false);
 		    return;
 	    }
+	    
 	    arrow.gameObject.SetActive(true);
+	    point.gameObject.SetActive(true);
+	    point.localPosition = ExitPoint;
 	    arrow.localRotation =
 		    nextOnPath == north ? northRotation :
 		    nextOnPath == east ? eastRotation :
@@ -102,5 +106,6 @@ public class GameTile : MonoBehaviour {
     public void HidePath()
     {
 	    arrow.gameObject.SetActive(false);
+	    point.gameObject.SetActive(false);
     }
 }
