@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
 public class GameTile : MonoBehaviour {
 	
@@ -95,7 +96,7 @@ public class GameTile : MonoBehaviour {
 	    
 	    arrow.gameObject.SetActive(true);
 	    point.gameObject.SetActive(true);
-	    point.localPosition = ExitPoint;
+	    point.localPosition = ExitPoint - transform.localPosition;
 	    arrow.localRotation =
 		    nextOnPath == north ? northRotation :
 		    nextOnPath == east ? eastRotation :
