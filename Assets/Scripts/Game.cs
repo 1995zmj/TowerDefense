@@ -28,6 +28,8 @@ public class Game : MonoBehaviour {
     void Start () {
         board.Initialize(boardSize, tileContentFactory);
         board.ShowGrid = true;
+        
+        SpawnEnemy();
     }
     
     void OnValidate () {
@@ -50,11 +52,11 @@ public class Game : MonoBehaviour {
             board.ShowGrid = !board.ShowGrid;
         }
         
-        spawnProgress += spawnSpeed * Time.deltaTime;
-        while (spawnProgress >= 1f) {
-            spawnProgress -= 1f;
-            SpawnEnemy();
-        }
+        // spawnProgress += spawnSpeed * Time.deltaTime;
+        // while (spawnProgress >= 1f) {
+        //     spawnProgress -= 1f;
+        //     SpawnEnemy();
+        // }
         
         enemies.GameUpdate();
     }
