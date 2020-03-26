@@ -16,7 +16,7 @@ public class GameTileContentFactory : GameObjectFactory {
     GameTileContent spawnPointPrefab = default;
     
     [SerializeField]
-    GameTileContent towerPrefab = default;
+    Tower towerPrefab = default;
     
     Scene contentScene;
     
