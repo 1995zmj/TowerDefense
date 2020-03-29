@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3597573818407717092}
   - component: {fileID: 6536332798055270101}
-  - component: {fileID: 6437533940388115428}
   - component: {fileID: 1537982002646522219}
-  - component: {fileID: 1503642282853378689}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -42,19 +40,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2375696654015263445}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &6437533940388115428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2375696654015263445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4aa2fa9082b058419eef753e5a3abe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
 --- !u!23 &1537982002646522219
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -92,19 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1503642282853378689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2375696654015263445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c167ded28a03f14fb0634884c2e4043, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 4
 --- !u!1 &4851522907369132394
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,10 +87,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7667831111065377119}
   - component: {fileID: 7465073395550501419}
-  - component: {fileID: 4184035222059203745}
   - component: {fileID: 9159977080172047285}
   - component: {fileID: 5881382145424562624}
-  - component: {fileID: 8608633620760579507}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -148,19 +118,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4851522907369132394}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &4184035222059203745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4851522907369132394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4aa2fa9082b058419eef753e5a3abe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
 --- !u!23 &9159977080172047285
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -211,19 +168,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &8608633620760579507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4851522907369132394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c167ded28a03f14fb0634884c2e4043, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 4
 --- !u!1 &7326716440386284625
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,9 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3877337503976315409}
   - component: {fileID: 4478081033953913544}
-  - component: {fileID: 7019418964096606292}
   - component: {fileID: 3833025511398829697}
-  - component: {fileID: 6917593338049952489}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -266,19 +208,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7326716440386284625}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &7019418964096606292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7326716440386284625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4aa2fa9082b058419eef753e5a3abe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
 --- !u!23 &3833025511398829697
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -316,19 +245,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6917593338049952489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7326716440386284625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c167ded28a03f14fb0634884c2e4043, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 4
 --- !u!1 &7541628158684472134
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,9 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5122891940614990187}
   - component: {fileID: 5111520421894307253}
-  - component: {fileID: 7452562589329565063}
   - component: {fileID: 3722315788911056424}
-  - component: {fileID: 3261125279402485247}
   m_Layer: 0
   m_Name: LaserBeam
   m_TagString: Untagged
@@ -371,19 +285,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7541628158684472134}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &7452562589329565063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541628158684472134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4aa2fa9082b058419eef753e5a3abe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
 --- !u!23 &3722315788911056424
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -421,19 +322,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3261125279402485247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541628158684472134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c167ded28a03f14fb0634884c2e4043, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 4
 --- !u!1 &8984564439349332430
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,10 +331,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8984564439349332426}
-  - component: {fileID: 79372895639106568}
-  - component: {fileID: 6165499446690520988}
+  - component: {fileID: 3794120939870657157}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: LaserTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,7 +357,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &79372895639106568
+--- !u!114 &3794120939870657157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -479,20 +366,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8984564439349332430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4aa2fa9082b058419eef753e5a3abe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
---- !u!114 &6165499446690520988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8984564439349332430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c167ded28a03f14fb0634884c2e4043, type: 3}
+  m_Script: {fileID: 11500000, guid: 22238d5b12cb7b24ba45958d8af7a2a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
+  targetingRange: 1.5
+  damagePerSecond: 10
+  turret: {fileID: 3597573818407717092}
+  laserBeam: {fileID: 5122891940614990187}

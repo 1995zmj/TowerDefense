@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 public class Game : MonoBehaviour {
 
@@ -23,6 +24,7 @@ public class Game : MonoBehaviour {
 
     float spawnProgress;
     
+    TowerType selectedTowerType;
     Ray TouchRay => Camera.main.ScreenPointToRay(Input.mousePosition);
     
     void Start () {
@@ -50,6 +52,13 @@ public class Game : MonoBehaviour {
             board.ShowGrid = !board.ShowGrid;
         }
         
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            selectedTowerType = TowerType.Laser;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            selectedTowerType = TowerType.Mortar;
+        }
+
         spawnProgress += spawnSpeed * Time.deltaTime;
         while (spawnProgress >= 1f) {
             spawnProgress -= 1f;
@@ -57,6 +66,8 @@ public class Game : MonoBehaviour {
         }
         
         enemies.GameUpdate();
+        Physics.SyncTransforms();
+        board.GameUpdate();
     }
     
     void SpawnEnemy () {
@@ -73,7 +84,7 @@ public class Game : MonoBehaviour {
         {
             if (Input.GetKey((KeyCode.LeftShift)))
             {
-                board.ToggleTower(tile);
+                board.ToggleTower(tile, selectedTowerType);
             }
             else
             {

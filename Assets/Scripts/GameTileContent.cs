@@ -8,6 +8,7 @@ public enum GameTileContentType {
     Tower
 }
 
+[SelectionBase]
 public class GameTileContent : MonoBehaviour {
     
     GameTileContentFactory originFactory;
@@ -31,4 +32,6 @@ public class GameTileContent : MonoBehaviour {
     public void Recycle () {
         originFactory.Reclaim(this);
     }
+    
+    public virtual void GameUpdate () {}
 }

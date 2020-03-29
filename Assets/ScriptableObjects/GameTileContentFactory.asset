@@ -20,5 +20,6 @@ MonoBehaviour:
     type: 3}
   spawnPointPrefab: {fileID: 2736851357054797371, guid: 453a6a8234ba2da478734c128816528e,
     type: 3}
-  towerPrefab: {fileID: 6165499446690520988, guid: c62cf3544d5d74744ac5f38c4d120cad,
-    type: 3}
+  towerPrefabs:
+  - {fileID: 3794120939870657157, guid: c62cf3544d5d74744ac5f38c4d120cad, type: 3}
+  - {fileID: 2555099360497899311, guid: 09e413ce857834b4986b88b31cb120fc, type: 3}
