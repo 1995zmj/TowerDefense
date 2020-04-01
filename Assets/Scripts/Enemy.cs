@@ -27,9 +27,9 @@ public class Enemy : GameBehavior
         }
     }
     
-    public void Initialize (float scale, float speed, float pathOffset) {
+    public void Initialize (float scale, float speed, float pathOffset, float health) {
         Scale = scale;
-        Health = 100f * scale;
+        Health = health;
         model.localScale = new Vector3(scale, scale, scale);
         this.speed = speed;
         this.pathOffset = pathOffset;
