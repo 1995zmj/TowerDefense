@@ -48,12 +48,11 @@ public class Enemy : GameBehavior
         PrepareIntro();
     }
     
-    
-    
     public override bool GameUpdate () {
         
         if (Health <= 0f) {
-            OriginFactory.Reclaim(this);
+            // OriginFactory.Reclaim(this);
+            Recycle();
             return false;
         }
         
@@ -63,7 +62,8 @@ public class Enemy : GameBehavior
             // tileTo = tileTo.NextTileOnPath;
             if (tileTo == null)
             {
-                OriginFactory.Reclaim(this);
+                Game.EnemyReachedDestination();
+                Recycle();
                 return false;
             }
             // positionFrom = positionTo;
@@ -87,10 +87,11 @@ public class Enemy : GameBehavior
             );
             transform.localRotation = Quaternion.Euler(0f, angle, 0f);
         }
-        
-        
-          
         return true;
+    }
+    
+    public override void Recycle () {
+        OriginFactory.Reclaim(this);
     }
     
     void PrepareNextState () {

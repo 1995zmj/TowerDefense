@@ -15,17 +15,25 @@ public class Game : MonoBehaviour {
     GameTileContentFactory tileContentFactory = default;
     [SerializeField]
     WarFactory warFactory = default;
-    [SerializeField]
-    EnemyFactory enemyFactory = default;
-    
+    // [SerializeField]
+    // EnemyFactory enemyFactory = default;
+    //
     GameBehaviorCollection enemies = new GameBehaviorCollection();
     GameBehaviorCollection nonEnemies = new GameBehaviorCollection();
+    [SerializeField]
+    GameScenario scenario = default;
 
-    [SerializeField, Range(0.1f, 10f)]
-    float spawnSpeed = 1f;
-
-    float spawnProgress;
+    GameScenario.State activeScenario;
     
+    [SerializeField, Range(0, 100)]
+    int startingPlayerHealth = 10;
+    int playerHealth;
+    // [SerializeField, Range(0.1f, 10f)]
+    // float spawnSpeed = 1f;
+    [SerializeField, Range(1f, 10f)]
+    float playSpeed = 1f;
+    // float spawnProgress;
+    const float pausedTimeScale = 0f;
     TowerType selectedTowerType;
     Ray TouchRay => Camera.main.ScreenPointToRay(Input.mousePosition);
     static Game instance;
@@ -35,6 +43,8 @@ public class Game : MonoBehaviour {
     void Start () {
         board.Initialize(boardSize, tileContentFactory);
         board.ShowGrid = true;
+        activeScenario = scenario.Begin();
+        playerHealth = startingPlayerHealth;
     }
     
     void OnValidate () {
@@ -46,6 +56,14 @@ public class Game : MonoBehaviour {
         }
     }
     
+    void BeginNewGame () {
+        enemies.Clear();
+        nonEnemies.Clear();
+        board.Clear();
+        activeScenario = scenario.Begin();
+        playerHealth = startingPlayerHealth;
+    }
+    
     void Update () {
         if (Input.GetMouseButtonDown(0)) {
             HandleTouch();
@@ -55,6 +73,16 @@ public class Game : MonoBehaviour {
             board.ShowPaths = !board.ShowPaths;
         }else if (Input.GetKeyDown(KeyCode.G)) {
             board.ShowGrid = !board.ShowGrid;
+        }else if (Input.GetKeyDown(KeyCode.B)) {
+            BeginNewGame();
+        }
+        
+        
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Time.timeScale =
+                Time.timeScale > pausedTimeScale ? pausedTimeScale : 1f;
+        }else if (Time.timeScale > pausedTimeScale) {
+            Time.timeScale = playSpeed;
         }
         
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
@@ -64,25 +92,39 @@ public class Game : MonoBehaviour {
             selectedTowerType = TowerType.Mortar;
         }
 
-        spawnProgress += spawnSpeed * Time.deltaTime;
-        while (spawnProgress >= 1f) {
-            spawnProgress -= 1f;
-            SpawnEnemy();
+        // spawnProgress += spawnSpeed * Time.deltaTime;
+        // while (spawnProgress >= 1f) {
+        //     spawnProgress -= 1f;
+        //     SpawnEnemy();
+        // }
+        if (playerHealth <= 0 && startingPlayerHealth > 0) {
+            Debug.Log("Defeat!");
+            BeginNewGame();
         }
         
+        if (!activeScenario.Progress() && enemies.IsEmpty) {
+            Debug.Log("Victory!");
+            BeginNewGame();
+            activeScenario.Progress();
+        }
+
         enemies.GameUpdate();
         nonEnemies.GameUpdate();
         Physics.SyncTransforms();
         board.GameUpdate();
     }
-    
-    void SpawnEnemy () {
-        GameTile spawnPoint =
-            board.GetSpawnPoint(Random.Range(0, board.SpawnPointCount));
-        Enemy enemy = enemyFactory.Get((EnemyType)(Random.Range(0, 3)));
-        enemy.SpawnOn(spawnPoint);
-        enemies.Add(enemy);
+    public static void EnemyReachedDestination () {
+        instance.playerHealth -= 1;
     }
+    public static void SpawnEnemy (EnemyFactory factory, EnemyType type) {
+    		GameTile spawnPoint = instance.board.GetSpawnPoint(
+    			Random.Range(0, instance.board.SpawnPointCount)
+    		);
+    		Enemy enemy = factory.Get(type);
+    		enemy.SpawnOn(spawnPoint);
+    		instance.enemies.Add(enemy);
+    	}
+    
     public static Shell SpawnShell () {
         Shell shell = instance.warFactory.Shell;
         instance.nonEnemies.Add(shell);

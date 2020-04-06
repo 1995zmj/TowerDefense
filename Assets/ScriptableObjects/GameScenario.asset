@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f40a1a44cb5d74fbed683fd3ba17c4, type: 3}
+  m_Name: GameScenario
+  m_EditorClassIdentifier: 
+  waves:
+  - {fileID: 11400000, guid: 077eb738e19b6574c8f95c14f8f4a430, type: 2}
+  - {fileID: 11400000, guid: dbe4d5183160d9f47a240ab71a081670, type: 2}
