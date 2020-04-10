@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1880090874548669809}
   - component: {fileID: 1880090874548669810}
   m_Layer: 9
-  m_Name: Enemy 1
+  m_Name: EnemyCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,4 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a0dc60b227179469af105a42ec70c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationConfig: {fileID: 11400000, guid: 025687b92b819724c9ed0f4e41b9b292, type: 2}
   model: {fileID: 1880090873933426687}

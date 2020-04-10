@@ -179,4 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a0dc60b227179469af105a42ec70c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationConfig: {fileID: 11400000, guid: 025687b92b819724c9ed0f4e41b9b292, type: 2}
   model: {fileID: 1880090873933426687}

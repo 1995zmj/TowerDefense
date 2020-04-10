@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : GameBehavior 
 {
-
+    [SerializeField]
+    EnemyAnimationConfig animationConfig = default;
     [SerializeField] 
     private Transform model = default;
+    EnemyAnimator animator;
     EnemyFactory originFactory;
     GameTile tileFrom, tileTo;
     Vector3 positionFrom, positionTo;
@@ -26,13 +29,27 @@ public class Enemy : GameBehavior
             originFactory = value;
         }
     }
+
+    private void Awake()
+    {
+        animator.Configure(
+            model.GetChild(0).gameObject.AddComponent<Animator>(),
+            animationConfig
+            );
+    }
     
+    void OnDestroy () {
+        animator.Destroy();
+    }
+
     public void Initialize (float scale, float speed, float pathOffset, float health) {
         Scale = scale;
         Health = health;
         model.localScale = new Vector3(scale, scale, scale);
         this.speed = speed;
         this.pathOffset = pathOffset;
+        animator.Play(speed / scale);
+
     }
     public void ApplyDamage (float damage) {
         Debug.Assert(damage >= 0f, "Negative damage applied.");
@@ -91,6 +108,7 @@ public class Enemy : GameBehavior
     }
     
     public override void Recycle () {
+        animator.Stop();
         OriginFactory.Reclaim(this);
     }
     
